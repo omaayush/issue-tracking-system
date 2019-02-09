@@ -1,0 +1,44 @@
+#!/bin/sh
+pass=true
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+MAX=40
+
+echo "Running Linters:"
+
+lint=$(ng lint --format=verbose)
+ret_code=$?
+
+if [ $ret_code != 0 ]; then
+
+	counter=0
+	for error in ${lint}
+	do
+		if [ "$error" = "ERROR:" ]
+		then
+			counter=$((counter+1))
+		fi
+	done
+
+	printf "${RED}Identified Errors: ${counter}${NC}\n"
+
+	if [ "$counter" -gt "$MAX" ]
+	then
+		pass=false	
+		printf "${RED}Errors are more than the threshold ${MAX}${NC}\n"
+		printf "${RED}Rejecting Push${NC}\n"
+	else
+		printf "${GREEN}Errors are less than the threshold ${MAX}${NC}\n"
+		printf "${GREEN}Accepting Push${NC}\n"
+	fi
+
+else
+	printf "${GREEN}No Errors found.${NC}\n"
+fi
+
+if $pass; then
+	exit 0
+fi
+
+exit 1
