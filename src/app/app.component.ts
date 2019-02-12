@@ -1,12 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { HeaderComponent } from './header/header.component';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'tut';
+export class AppComponent{
+  title = 'Web-App';
 }
