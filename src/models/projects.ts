@@ -1,6 +1,6 @@
-export class Projects {
+export interface Projects {
   id: number;
-  created_at: Date;
-  updated_at: Date;
+  created_at: string;
+  updated_at: string;
   name: string;
 }

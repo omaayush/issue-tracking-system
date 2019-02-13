@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +10,7 @@ import { IssueCardMiniComponent } from './issue-card-mini/issue-card-mini.compon
 import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 import { IssuesListComponent } from './issues-list/issues-list.component';
 import { IssueDetailsComponent } from './issue-details/issue-details.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { IssueDetailsComponent } from './issue-details/issue-details.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

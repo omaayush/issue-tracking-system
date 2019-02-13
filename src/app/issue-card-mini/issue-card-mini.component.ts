@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Users } from '../../models/users';
 import {GetDataService} from '../services/get-data.service';
+import {observable} from 'rxjs';
 
 @Component({
   selector: 'app-issue-card-mini',
@@ -9,17 +10,23 @@ import {GetDataService} from '../services/get-data.service';
   providers: [GetDataService]
 })
 export class IssueCardMiniComponent implements OnInit{
-  IssueData: Users[];
-  issue: Users;
+  public IssueData: Users[];
+  //issue: Users;
 
   @Input() public showAssignee: boolean;
   @Input() public stat: string;
   // @Input() public statusM(): boolean;
 
-  constructor(private ShowKanbandataService: GetDataService){}
+  constructor(private kanbanDataService: GetDataService){}
+
+  // ngOnInit(): void {
+  //   this.IssueData = this.kanbanDataService.getCards();
+  // }
 
   ngOnInit(): void {
-    this.IssueData = this.ShowKanbandataService.getCards();
+    this.kanbanDataService.getCards()
+    .subscribe(data => this.IssueData = data);
+
   }
 
   // function FilerOnlyRequiredStatusCards()
