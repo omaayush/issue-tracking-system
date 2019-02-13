@@ -1,30 +1,29 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { card } from '../../models/card';
-import {ShowKanbanDataService} from '../services/show-kanban-data.service';
+import { Users } from '../../models/users';
+import {GetDataService} from '../services/get-data.service';
 
 @Component({
   selector: 'app-issue-card-mini',
   templateUrl: './issue-card-mini.component.html',
   styleUrls: ['./issue-card-mini.component.scss'],
-  providers: [ShowKanbanDataService]
+  providers: [GetDataService]
 })
 export class IssueCardMiniComponent implements OnInit{
-  IssueData: card[];
-  issue: card;
+  IssueData: Users[];
+  issue: Users;
 
   @Input() public showAssignee: boolean;
   @Input() public stat: string;
   // @Input() public statusM(): boolean;
 
-  constructor(private ShowKanbandataService: ShowKanbanDataService){}
+  constructor(private ShowKanbandataService: GetDataService){}
 
   ngOnInit(): void {
     this.IssueData = this.ShowKanbandataService.getCards();
   }
 
-  // statusM():boolean{
-  //   this.issue=this.ShowKanbandataService.getCards();
-  //   if (this.issue.status == this.stat)
-  //     return true;
+  // function FilerOnlyRequiredStatusCards()
+  // {
+  //
   // }
 }

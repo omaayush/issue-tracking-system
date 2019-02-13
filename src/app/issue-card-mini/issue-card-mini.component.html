@@ -1,5 +1,5 @@
 <!--<section *ngFor="let issueData of IssueData">-->
-<!--<div class="card container" routerLink="/issues">-->
+<!--<div class="Users container" routerLink="/issues">-->
     <!--<div class="card__id" *ngIf="showAssignee">Id: {{ issueData.id }}</div>-->
     <!--<div class="card__date" *ngIf="showAssignee">{{ issueData.date }}</div>-->
   <!--<h3>{{ issueData.heading }}</h3>-->
@@ -18,8 +18,7 @@
 <!--</section>-->
 
 <section *ngFor="let issueData of IssueData">
-
-  <!--<section *ngIf=(issueData.status==stat)>-->
+  <section *ngIf=(issueData.status===stat)>
   <div class="card container" routerLink="/issues">
     <div class="card__id" >Id: {{ issueData.id }}</div>
     <div class="card__date" >{{ issueData.date }}</div>

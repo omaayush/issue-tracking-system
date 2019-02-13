@@ -1,112 +1,57 @@
-import {card} from '../../models/card';
+import {Users} from '../../models/users';
+import {Projects} from '../../models/projects';
+import {Issues} from '../../models/issue';
 
-export const CARDS: card[] = [
+export const USERS: Users[] = [
   {
-    assignee: 'Aayush',
-    date: 'January 01, 2019',
-    description:
-      'TD- My Name is Anthony Gonsalvis',
-    heading: 'Your name?',
-    id: 'PCG54678',
-    status: "Todo"
-  },
-  {
-    assignee: 'Aman',
-    date: 'Febrary 02, 2019',
-    description:
-      'TD- My Name is Ganesh Gaitonde',
-    heading: 'Your Brother',
-    id: 'JDR54678',
-    status: 'Todo'
-  },
-  {
-    assignee: 'Akhiles',
-    date: 'March 03, 2019',
-    description:
-      'TD- My Name is Himesh Reshamiya',
-    heading: 'Bro Name',
-    id: 'JDR542736',
-    status: 'Todo'
-  },
-  {
-    assignee: 'Kabil',
-    date: 'April 04, 2019',
-    description:
-      'TD- My Name is Atta Maji Satakli',
-    heading: 'Singham Line',
-    id: 'HTSE6758',
-    status: 'Todo'
-  },
-  {
-    assignee: 'Aayush',
-    date: 'January 01, 2019',
-    description:
-      'IP- My Name is Anthony Gonsalvis',
-    heading: 'Your name?',
-    id: 'PCG54678',
-    status: 'InProgress'
-  },
-  {
-    assignee: 'Aman',
-    date: 'Febrary 02, 2019',
-    description:
-      'IP- My Name is Ganesh Gaitonde',
-    heading: 'Your Brother',
-    id: 'JDR54678',
-    status: 'InProgress'
-  },
-  {
-    assignee: 'Akhiles',
-    date: 'March 03, 2019',
-    description:
-      'IP- My Name is Himesh Reshamiya',
-    heading: 'Bro Name',
-    id: 'JDR542736',
-    status: 'InProgress'
-  },
-  {
-    assignee: 'Kabil',
-    date: 'April 04, 2019',
-    description:
-      'IP- My Name is Atta Maji Satakli',
-    heading: 'Singham Line',
-    id: 'HTSE6758',
-    status: 'InProgress'
-  },
-  {
-    assignee: 'Aayush',
-    date: 'January 01, 2019',
-    description:
-      'D- My Name is Anthony Gonsalvis',
-    heading: 'Your name?',
-    id: 'PCG54678',
-    status: 'Done'
-  },
-  {
-    assignee: 'Aman',
-    date: 'Febrary 02, 2019',
-    description:
-      'D- My Name is Ganesh Gaitonde',
-    heading: 'Your Brother',
-    id: 'JDR54678',
-    status: 'Done'
-  },
-  {
-    assignee: 'Akhiles',
-    date: 'March 03, 2019',
-    description:
-      'D- My Name is Himesh Reshamiya',
-    heading: 'Bro Name',
-    id: 'JDR542736',
-    status: 'Done'
-  },
-  {
-    assignee: 'Kabil',
-    date: 'April 04, 2019',
-    description:
-      'D- My Name is Atta Maji Satakli',
-    heading: 'Singham Line',
-    id: 'HTSE6758',
-    status: 'Done'
+    id: 1,
+    username: 'user1',
+    email: 'user1@abc.com',
+    profile_image: 'https://picsum.photos/100?image=10',
+    role: 'UI/UX Designer'
   }
+
+];
+
+export const PROJECTS: Projects[] = [
+  {
+    id: 1,
+    created_at: '2019-01-12T15:04:44.190087Z',
+    updated_at: '2019-01-17T13:57:34.763967Z',
+    name: 'Project 1'
+  }
+
+];
+
+export const ISSUES: Issues[] = [
+  {
+    id: 1,
+    description_part: 'Feel oil rock pretty whether.' +
+      ' Better interesting pattern fear movie. support with painting.Feel oil rock pretty whether. ',
+    description: 'Institution office forward way result raise.' +
+      ' Organization low far safe manager.\nAnyone step end trade. ' +
+      'Skill respond daughter. Form minute PM task several.Institution office forward' +
+      ' way result raise. Organization low far safe manager.\nAnyone step end trade.' +
+      ' Skill respond daughter. Form minute PM task several.' +
+      'Institution office forward way result raise.' +
+      ' Organization low far safe manager.\nAnyone step end trade.' +
+      ' Skill respond daughter. Form minute PM task several.' +
+      'Institution office forward way result raise. ' +
+      'Organization low far safe manager.\nAnyone step end trade.' +
+      ' Skill respond daughter. Form minute PM task several.' +
+      'Institution office forward way result raise. Organization low far safe manager.' +
+      '\nAnyone step end trade. Skill respond daughter. Form minute PM task several.' +
+      'Institution office forward way result raise. Organization low far safe manager.' +
+      '\nAnyone step end trade. Skill respond daughter. Form minute PM task several.'
+    created_at: '2019-01-17T13:17:25.489974Z',
+    updated_at: '2019-02-06T10:19:45.315818Z',
+    title: 'Woman Central Chance Skin Interesting Government',
+    status: 'In Progress',
+    severity: 20,
+    due_date: '2019-04-24',
+    type: 'Bug',
+    project: 8,
+    assignee: 'Abhishek'
+},
+
 ];
