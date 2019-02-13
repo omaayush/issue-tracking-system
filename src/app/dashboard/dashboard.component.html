@@ -6,11 +6,14 @@
       <img src="../assets/graph.png"/>
     </section>
     <section class="issues-list-section">
-      <article class="paper" *ngFor="let j of [1, 2]">
+      <article class="paper" >
         <app-issues-list heading="High Priority"></app-issues-list>
       </article>
-      <article class="paper">
-        List
+      <article class="paper" >
+        <app-issues-list heading="Recently Updates Issue"></app-issues-list>
+      </article>
+      <article class="paper" >
+        <app-issues-list heading="All Issue"></app-issues-list>
       </article>
     </section>
   </main>   

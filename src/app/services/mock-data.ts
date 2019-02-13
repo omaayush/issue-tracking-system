@@ -93,20 +93,19 @@ export const ISSUES: Issues[] =
     'type': 'Bug',
     'project': 8,
     'assignee': null
-  },
-    {
-      'id': 2,
-      'description_part': null,
-      'created_at': '2019-01-11T04:43:10.711201Z',
-      'updated_at': '2019-02-12T04:48:42.907554Z',
-      'title': 'Different Five Economy Site Idea Computer',
-      'status': 'In Progress',
-      'severity': 2,
-      'due_date': '2019-01-24',
-      'type': 'Bug',
-      'project': 9,
-      'assignee': null
-    }, {
+  }, {
+    'id': 2,
+    'description_part': null,
+    'created_at': '2019-01-11T04:43:10.711201Z',
+    'updated_at': '2019-02-12T04:48:42.907554Z',
+    'title': 'Different Five Economy Site Idea Computer',
+    'status': 'In Progress',
+    'severity': 2,
+    'due_date': '2019-01-24',
+    'type': 'Bug',
+    'project': 9,
+    'assignee': null
+  }, {
     'id': 3,
     'description_part': null,
     'created_at': '2019-01-23T04:43:10.717774Z',

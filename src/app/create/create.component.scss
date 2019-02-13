@@ -10,14 +10,23 @@ form {
 }
 
 
-.title-container {
-  grid-column: 1 / -1;
-}
+//.title-container {
+//  grid-column: 1 / -1;
+//}
 
 .submit-section {
   display: flex;
   grid-column: 2 / -1;
   justify-content: flex-end;
+  justify-items: center;
+}
+
+.submit-section .sub{
+  justify-content: space-between;
+}
+
+.submit-section button{
+  margin-left: 3em;
 }
 
 .title-text {

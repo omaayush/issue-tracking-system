@@ -19,7 +19,7 @@ const routes: Routes = [
     component: KanbanBoardComponent
   },
   {
-    path: 'issues',
+    path: 'issues/:id',
     component: IssueDetailsComponent
   },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

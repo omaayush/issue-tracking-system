@@ -1,15 +1,12 @@
 <div class="app-container create-container">
   <app-nav></app-nav>
   <main>
+    <br>
     <h1>Create</h1>
-    <form>
-      <section class="title-container">
-        <label for="title"> Title:</label>
-        <textarea class="title-text" name="title" placeholder="Text"></textarea>
-      </section>
+    <form (submit)=onSubmit()>
       <section>
-        <label>Type:</label>
-        <select>
+        <label>Project:</label>
+        <select >
           <option value="volvo">Volvo</option>
           <option value="saab">Saab</option>
           <option value="mercedes">Mercedes</option>
@@ -17,8 +14,21 @@
         </select>
       </section>
       <section>
-        <label>Status:</label>
-        <input type="text">
+        <label>Issue Type:</label>
+        <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </section>
+      <section >
+        <label> Title:</label>
+        <input type="text" placeholder="text">
+      </section>
+      <section >
+        <label> Description:</label>
+        <input type="text" placeholder="text">
       </section>
       <section>
         <label>Priority:</label>
@@ -30,29 +40,6 @@
         </select>
       </section>
       <section>
-        <label>Resolution:</label>
-        <input type="text">
-      </section>
-      <section>
-        <label>Affected Version/s:</label>
-        <input type="text">
-      </section>
-      <section>
-        <label>Fix-Version:</label>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </section>
-
-      <section>
-        <label>Components/s:</label>
-        <input type="text">
-      </section>
-
-      <section>
         <label>Assignee:</label>
         <select>
           <option value="volvo">Volvo</option>
@@ -61,50 +48,35 @@
           <option value="audi">Audi</option>
         </select>
       </section>
-
-      <section>
-        <label>Labels:</label>
-        <input type="text">
-      </section>
-
-      <section>
-        <label>Reporter:</label>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </section>
-
-      <section>
-        <label>Sprint:</label>
-        <input type="text">
-      </section>
-
-      <section>
-        <label>Description:</label>
-        <input type="text">
-      </section>
-
-
-      <section>
-        <label>Story Points:</label>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </section>
-
       <section>
         <label>Attachment:</label>
         <div class="attachment"> Drop file to attach or <a href="">browse</a></div>
       </section>
+      <section>
+        <label>Date:</label>
+          <div >
+            <input type="date">
+          </div>
+      </section>
 
       <section class="submit-section">
-        <button type="submit">Submit ></button>
+        <section class="sub">
+        <button type="submit">Cancel </button>
+        <button type="submit">Submit </button>
+        </section>
+      </section>
+
+      <section>
+        <label></label>
+      </section>
+      <section>
+        <label></label>
+      </section>
+      <section>
+        <label></label>
+      </section>
+      <section>
+        <label></label>
       </section>
     </form>
   </main>
