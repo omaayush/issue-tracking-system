@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-// import {USERS} from './mock-data';
 import {Users} from '../../models/users';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';

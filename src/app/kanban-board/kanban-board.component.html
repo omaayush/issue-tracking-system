@@ -7,13 +7,13 @@
     </section>
     <section class="kanban-board">
       <section class="paper">
-        <app-issues-list heading="Todo" showAssignee="true" stat="Todo"></app-issues-list>
+        <app-issues-list heading="Todo" showAssignee="true" [issues]="toDoIssue" stat="Todo"></app-issues-list>
       </section>
       <section class="paper">
-        <app-issues-list heading="In Progress" showAssignee="true" stat="InProgress"></app-issues-list>
+        <app-issues-list heading="In Progress" showAssignee="true" [issues]="inProgressIssue" stat="InProgress"></app-issues-list>
       </section>
       <section class="paper">
-        <app-issues-list heading="Done"  showAssignee="true" stat="Done"></app-issues-list>
+        <app-issues-list heading="Done"  showAssignee="true" [issues]="doneIssues" stat="Done"></app-issues-list>
       </section>
     </section>
   </main>

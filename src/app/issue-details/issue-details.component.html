@@ -1,8 +1,8 @@
 <div class="app-container issue-details-container">
   <app-nav></app-nav>
   <main>
-    <h1>The quick brown fox jumps over a lazy dog.</h1>
-    <h3>Description</h3>
+    <h1>{{ issue.title }} </h1>
+    <h5>Description: {{issue.description}}</h5>
     <section class="options-section">
       <button type="secondary">
         Edit
@@ -13,113 +13,50 @@
     </section>
 
     <section class="details-section">
-
       <div class="details-container">
-        <div class="key">ID:</div>
-        <strong>8726346</strong>
+        <div class="key">Id:</div>
+        <strong>{{ issue.id }}</strong>
         <div class="key">Project:</div>
-        <strong>None</strong>
+        <strong class="priority">{{ issue.project }}</strong>
         <div class="key">Priority:</div>
-        <strong class="priority">High Priority</strong>
-        <div class="key">Attachment:</div>
-        <strong class="priority"> </strong>
+        <strong>{{ priority[issue.severity] }}</strong>
+        <div class="key">Attachments:</div>
+        <strong>None</strong>
       </div>
 
       <div class="details-container">
-        <div class="key">Issue Type: </div>
-        <strong>New</strong>
-        <div class="key">Assignee:</div>
-        <strong>Unresolved</strong>
+        <div class="key">Issue Type:</div>
+        <!--<strong>{{ issueType[issue.type] }}</strong>-->
+        <strong>{{ issue.type }}</strong>
+        <div class="key">Assignee: </div>
+        <strong>{{ issue.assignee }}</strong>
         <div class="key">Due Date:</div>
-        <strong>None</strong>
+        <!--<strong>{{ issue.due_date | date }}</strong>-->
+        <strong>{{ issue.due_date }}</strong>
       </div>
     </section>
 
-    <div class="details-container">
-      <div class="key">Attachment:</div>
-      <div></div>
-      <div class="attachment"> Drop file to attach or <a href="">browse</a></div>
-    </div>
+    <section class="description-section">
+      <div class="details-container">
+        <h3>Attachment</h3>
+      </div>
+        <div class="attachment-box">
+          <div class="attachment-text">
+            Drop files to attach, or <a href="">browse</a>
+          </div>
+        </div>
+    </section>
 
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div><div>
-    <label></label>
-  </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div><div>
-    <label></label>
-  </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div>
-    <div>
-      <label></label>
-    </div>
-    <div>
-      <label></label>
-    </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div><div>
-    <label></label>
-  </div>
+    <section class="description-section">
 
+    </section>
 
+    <section>
 
+    </section>
 
+    <section class="activity-section">
 
-
-
-
-
-
-
-
-
-
-
+    </section>
   </main>
 </div>

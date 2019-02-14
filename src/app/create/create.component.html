@@ -3,59 +3,78 @@
   <main>
     <br>
     <h1>Create</h1>
-    <form (submit)=onSubmit()>
+    <form class ="form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <section>
-        <label>Project:</label>
-        <select >
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+        <label for="project">Project:</label>
+        <select id="project" formControlName="project">
+          <option >
+            Select Project
+          </option>
+          </select>
+      </section>
+
+      <section>
+        <label for="issueType" >Issue Type:</label>
+        <select id="issueType" formControlName="issueType">
+          <option >
+            Task
+          </option>
         </select>
       </section>
+
       <section>
-        <label>Issue Type:</label>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
+        <div [ngClass]="{'invalid-feedback':
+        form.get('title').errors
+        && ( form.get('title').dirty
+         || form.get('title').touched )}">
+          <label for="title"> Title:</label>
+        <input formControlName="title" id="title" placeholder="text...." type="text">
+        </div>
+        <span class="invalid-feedback" *ngIf="form.get('title').errors
+        && ( form.get('title').dirty
+         || form.get('title').touched )">
+          <span *ngIf="form.get('title').invalid">
+            <label>
+              Enter the Title
+            </label>
+          </span>
+        </span>
+
       </section>
+
       <section >
-        <label> Title:</label>
-        <input type="text" placeholder="text">
+        <label for="description"> Description:</label>
+        <input id="description" formControlName="description" type="text" placeholder="text">
       </section>
-      <section >
-        <label> Description:</label>
-        <input type="text" placeholder="text">
-      </section>
+
       <section>
-        <label>Priority:</label>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+        <label for="priority">Priority:</label>
+        <select id="priority" formControlName="priority">
+          <option>
+            Very Low
+          </option>
         </select>
       </section>
+
       <section>
-        <label>Assignee:</label>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+        <label for="assignee">Assignee:</label>
+        <select id="assignee" formControlName="assignee">
+          <option >
+            Sijo M Peter
+          </option>
         </select>
       </section>
+
       <section>
-        <label>Attachment:</label>
-        <div class="attachment"> Drop file to attach or <a href="">browse</a></div>
+        <label for="attachment">Attachment:</label>
+        <input id="attachment" formControlName="attachment" type="text" class="attachment" placeholder="Drop files to attach, or browse">
+        <!--<div id="attachment" formControlName="attachment" class="attachment"> Drop file to attach or <a href="">browse</a></div>-->
       </section>
+
       <section>
-        <label>Date:</label>
+        <label for="date">Date:</label>
           <div >
-            <input type="date">
+            <input id="date" formControlName="date" type="date">
           </div>
       </section>
 

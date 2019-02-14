@@ -1,27 +1,43 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Issues} from '../../models/issue';
+import Issues from '../../models/issue';
+import {fetchUrl} from './fetchURL';
+
+
+const httpPost = {
+  headers:new HttpHeaders({
+    'Content-type':'appliction/json',
+    Authorization: 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetIssueDataService {
+  endpoint = fetchUrl + 'issues/';
+  data;
 
-  private _url = 'http://127.0.0.1:8000/api/v1/issues/';
-  private _urlissue = 'http://127.0.0.1:8000/api/v1/issues/';
+  //
+  // private _url = 'http://127.0.0.1:8000/api/v1/issues/';
+  // private _urlissue = 'http://127.0.0.1:8000/api/v1/issues/';
 
   constructor(private http: HttpClient) { }
 
-  getIssues(): Observable<Issues[]> {
-    return this.http.get<Issues[]>(this._url);
+  getIssues() {
+    return this.http.get(this.endpoint);
   }
 
-  getIssuesById(IssueId): Observable<Issues[]> {
-    return this.http.get<Issues[]>(this._urlissue+IssueId);
+  getIssue(id: number) {
+    return this.http.get(this.endpoint + id);
   }
 
-  AddIssue(issues: any[]) {
-    return this.http.post('http://127.0.0.1:8000/api/v1/issues/',issues);
+  postIssues(postIssue):Observable<any>{
+    return this.http.post<any>('http://127.0.0.1:8000/api/v1/issues/', postIssue, httpPost);
   }
+
+  // AddIssue(issues: any[]) {
+  //   return this.http.post('http://127.0.0.1:8000/api/v1/issues/',issues);
+  // }
 }

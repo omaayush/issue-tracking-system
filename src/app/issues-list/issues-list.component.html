@@ -1,7 +1,6 @@
-<h2>{{heading}}</h2>
+<h2>{{ heading }}</h2>
 <hr />
-<div >
-  <app-issue-card-mini [showAssignee]="showAssignee" [stat]="stat"></app-issue-card-mini>
-  <!--<app-issue-Users-mini></app-issue-Users-mini>-->
+<div *ngFor="let issue of issues">
+  <app-issue-card-mini [showAssignee]="showAssignee" [issueData]="issue"></app-issue-card-mini>
   <hr />
 </div>
