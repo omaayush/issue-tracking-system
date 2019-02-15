@@ -86,3 +86,67 @@ p {
   color: #53575B;
   opacity: 0.8;
 }
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  color: #748AA1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: #2c2f35;
+}
+
+.card-theme {
+  background-color: #fff;
+  box-shadow: 0 0.125em 0.25em 0 #f1f0f2;
+}
+
+.smallest-text {
+  font-size: 0.75em;
+}
+
+.small-text {
+  font-size: 0.9em;
+}
+
+.btn,
+.button {
+  color: #fff;
+}
+
+.red {
+  background-color: #d00000;
+}
+
+.lime {
+  background-color: #c6be00;
+}
+
+.green {
+  background-color: #64b900;
+}
+
+.orange {
+  background-color: #d46e00;
+}
+
+.submit-btn {
+  color: #fff;
+  background-color: #7100ff;
+}
+
+.grey-background {
+  background-color: #F4F3F5;
+}
+
+.nav-link-active {
+  background-color: #7100FF;
+  color: white;
+}
