@@ -3,18 +3,25 @@
   <main>
     <h1>Dashboard</h1>
     <section class="paper graph-section">
-      <img src="../assets/graph.png"/>
+      <img src="../assets/graph.png" />
     </section>
     <section class="issues-list-section">
-      <article class="paper" >
-        <app-issues-list heading="High Priority"></app-issues-list>
+      <article class="paper">
+        <app-issues-list heading="High Priority" showAssignee="false" [issues]="highPriorityIssues"></app-issues-list>
       </article>
-      <article class="paper" >
-        <app-issues-list heading="Recently Updates Issue"></app-issues-list>
+      <article class="paper">
+        <app-issues-list heading="Recently Updated" showAssignee="false" [issues]="recentlyUpdatedIssues"></app-issues-list>
       </article>
-      <article class="paper" >
-        <app-issues-list heading="All Issue"></app-issues-list>
+      <article class="paper">
+        <div>
+            <h2>All Issues</h2>
+            <hr />
+            <div *ngFor="let assigneeIssue of assigneeIssues">
+                <app-issue-card-mini-progress showAssignee="false" [issueData]="assigneeIssue"></app-issue-card-mini-progress>
+                <hr />
+            </div>
+        </div>
       </article>
     </section>
-  </main>   
+  </main>
 </div>

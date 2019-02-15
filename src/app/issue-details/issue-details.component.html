@@ -1,23 +1,27 @@
 <div class="app-container issue-details-container">
   <app-nav></app-nav>
   <main>
-    <h1>{{ issue.title }} </h1>
-    <h5>Description: {{issue.description}}</h5>
+    <h1>{{ issue.title }}.</h1>
+    <p>{{ issue.description }}</p>
+
     <section class="options-section">
       <button type="secondary">
         Edit
       </button>
-      <button type="secondary">
+      <button type="secondary" (click)="deleteIssue()">
         Delete
       </button>
     </section>
 
+
+
     <section class="details-section">
+
       <div class="details-container">
         <div class="key">Id:</div>
         <strong>{{ issue.id }}</strong>
         <div class="key">Project:</div>
-        <strong class="priority">{{ issue.project }}</strong>
+        <strong class="priority">{{ project['name'] }}</strong>
         <div class="key">Priority:</div>
         <strong>{{ priority[issue.severity] }}</strong>
         <div class="key">Attachments:</div>
@@ -26,37 +30,23 @@
 
       <div class="details-container">
         <div class="key">Issue Type:</div>
-        <!--<strong>{{ issueType[issue.type] }}</strong>-->
-        <strong>{{ issue.type }}</strong>
+        <strong>{{ issueType[issue.type] }}</strong>
         <div class="key">Assignee: </div>
-        <strong>{{ issue.assignee }}</strong>
+        <strong>{{ user['username'] }}</strong>
         <div class="key">Due Date:</div>
-        <!--<strong>{{ issue.due_date | date }}</strong>-->
-        <strong>{{ issue.due_date }}</strong>
+        <strong>{{ issue.due_date | date }}</strong>
       </div>
     </section>
 
-    <section class="description-section">
-      <div class="details-container">
+    <div class="details-container">
         <h3>Attachment</h3>
-      </div>
+
         <div class="attachment-box">
           <div class="attachment-text">
             Drop files to attach, or <a href="">browse</a>
           </div>
         </div>
-    </section>
+    </div>
 
-    <section class="description-section">
-
-    </section>
-
-    <section>
-
-    </section>
-
-    <section class="activity-section">
-
-    </section>
   </main>
 </div>

@@ -1,6 +1,0 @@
-files:
-  include: 'src/**/*.scss'
-  ignore: 'src/styles/reboot.scss'
-
-rules:
-  no-color-literals: 0

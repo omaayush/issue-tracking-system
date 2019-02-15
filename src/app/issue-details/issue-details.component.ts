@@ -32,7 +32,7 @@ export class IssueDetailsComponent implements OnInit {
   projectService: ProjectService;
 
   constructor(private router: Router, private issueService: IssueService, private route: ActivatedRoute,
-              userService: UserService, projectService: ProjectService) {
+    userService: UserService, projectService: ProjectService) {
     this.userService = userService;
     this.projectService = projectService;
     this.route.params.subscribe(params => {
@@ -42,8 +42,8 @@ export class IssueDetailsComponent implements OnInit {
       console.log(this.issue['project'] + 'issue');
       // if (this.issue['assignee']) { this.getUser(); }
       // if (this.issue['project']) { this.getProject(); }
-    });
-  }
+   });
+   }
 
   ngOnInit() {
   }
@@ -85,7 +85,7 @@ export class IssueDetailsComponent implements OnInit {
         window.alert('deleted');
         this.router.navigateByUrl('/issues');
       }, (error) => { console.log(error); this.router.navigateByUrl('/issues'); });
-    }
+     }
   }
 
 }

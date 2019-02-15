@@ -1,0 +1,15 @@
+<div class="card container" [routerLink]="['/issues', issueData.id]">
+  <div class="details">
+    <img src="{{issueData.assignee.profile_image}}">
+    <span class="details-info">
+      <span *ngIf="showAssignee"><strong> {{ issueData.assignee.username }} </strong></span>
+      <span *ngIf="users && issueData"> {{ issueData.assignee.role }} </span>
+    </span>
+  </div>
+  <progress value="{{ issueData.highPriorityIssues }}" max="{{ issueData.totalIssues }}" class="issue-progress">  </progress>
+
+  <div calss="issue-info">
+    <span> High Priority Issues: <strong>{{ issueData.highPriorityIssues }}</strong></span>
+    <span> Total Issues: <strong>{{ issueData.totalIssues }}</strong></span>
+  </div>
+</div>

@@ -1,101 +1,70 @@
 <div class="app-container create-container">
   <app-nav></app-nav>
   <main>
-    <br>
     <h1>Create</h1>
-    <form class ="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <section>
-        <label for="project">Project:</label>
-        <select id="project" formControlName="project">
-          <option >
-            Select Project
-          </option>
-          </select>
-      </section>
-
-      <section>
-        <label for="issueType" >Issue Type:</label>
-        <select id="issueType" formControlName="issueType">
-          <option >
-            Task
-          </option>
-        </select>
-      </section>
-
-      <section>
-        <div [ngClass]="{'invalid-feedback':
-        form.get('title').errors
-        && ( form.get('title').dirty
-         || form.get('title').touched )}">
-          <label for="title"> Title:</label>
-        <input formControlName="title" id="title" placeholder="text...." type="text">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+      <section class="title-container">
+        <label for="title"> Title:</label>
+        <input type="text" class="title-text" name="title" placeholder="Text" formControlName="title">
+        <div *ngIf="(f.title.dirty || f.title.touched) && f.title.errors" class="invalid-feedback">
+          <div *ngIf="f.title.errors.required">Title is required len 1-100</div>
         </div>
-        <span class="invalid-feedback" *ngIf="form.get('title').errors
-        && ( form.get('title').dirty
-         || form.get('title').touched )">
-          <span *ngIf="form.get('title').invalid">
-            <label>
-              Enter the Title
-            </label>
-          </span>
-        </span>
-
+      </section>
+      <section>
+        <label>Type:</label>
+        <select formControlName="type">
+          <!-- <option *ngFor="let item of type" [value]="item">
+            {{item}}
+          </option> -->
+          <option value="Bug">BUG</option>
+          <!-- <option value="Task">TASK</option> -->
+        </select>
+      </section>
+      <section>
+        <label>Status:</label>
+        <select formControlName="status">
+          <!-- <option *ngFor="let item of type" [value]="item">
+            {{item}}
+          </option> -->
+          <option value="Open">Open</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+      </section>
+      <section>
+        <label>Priority:</label>
+        <select formControlName="severity">
+          <!-- <option *ngFor="let item of priority" [value]="item">
+            {{item}}
+          </option> -->
+          <option value="1">LOW</option>
+          <option value="2">MEDIUM</option>
+          <option value="3">HIGH</option>
+        </select>
+      </section>
+      <section>
+        <label>Project:</label>
+        <select formControlName="project">
+          <option *ngFor="let project of projects" [value]="project.id">{{ project.name }}</option>
+        </select>
       </section>
 
-      <section >
-        <label for="description"> Description:</label>
-        <input id="description" formControlName="description" type="text" placeholder="text">
-      </section>
 
       <section>
-        <label for="priority">Priority:</label>
-        <select id="priority" formControlName="priority">
-          <option>
-            Very Low
-          </option>
+        <label>Assignee:</label>
+        <select formControlName="assignee">
+            <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
         </select>
       </section>
 
       <section>
-        <label for="assignee">Assignee:</label>
-        <select id="assignee" formControlName="assignee">
-          <option >
-            Sijo M Peter
-          </option>
-        </select>
+        <label>Description:</label>
+        <input type="text" formControlName="description">
       </section>
 
-      <section>
-        <label for="attachment">Attachment:</label>
-        <input id="attachment" formControlName="attachment" type="text" class="attachment" placeholder="Drop files to attach, or browse">
-        <!--<div id="attachment" formControlName="attachment" class="attachment"> Drop file to attach or <a href="">browse</a></div>-->
-      </section>
-
-      <section>
-        <label for="date">Date:</label>
-          <div >
-            <input id="date" formControlName="date" type="date">
-          </div>
-      </section>
 
       <section class="submit-section">
-        <section class="sub">
-        <button type="submit">Cancel </button>
-        <button type="submit">Submit </button>
-        </section>
-      </section>
-
-      <section>
-        <label></label>
-      </section>
-      <section>
-        <label></label>
-      </section>
-      <section>
-        <label></label>
-      </section>
-      <section>
-        <label></label>
+        <button type="submit" [disabled]="!createForm.valid">Submit ></button>
       </section>
     </form>
   </main>

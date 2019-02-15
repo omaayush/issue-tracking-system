@@ -1,0 +1,88 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body {
+  font-family: 'Inter UI', sans-serif;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 -30px 40px 10px rgb(30,30,30);
+}
+
+nav {
+  background-color: #1C2237;
+}
+
+main {
+  background-color: #2b30340d;
+}
+
+.create-container > main, .issue-details-container > main {
+  background: #fff;
+}
+
+body {
+  color: #748AA1;
+}
+
+h1, h2, label, .card__id, strong {
+  color: #282D32;
+}
+
+h3 {
+  color: #31394D;
+}
+
+a {
+  color: #4D5AFF;
+}
+
+[class$="--active"], button[type="primary"] {
+  background-color: #4D5AFF;
+  color: #fff;
+}
+
+.paper {
+  background-color: #FFFFFF;
+  box-shadow: -5px 5px 10px 0 rgba(30,30,30,0.05);
+}
+
+.card__date {
+  color: rgba(116,138,161,0.5);
+}
+
+.card__description {
+  color: #748AA1;
+}
+
+hr {
+  border: 1px solid #EBEDF4;  
+}
+
+input, select, textarea, .attachment {
+  border: 1px solid #979797;
+  background-color: #FFFFFF;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.7em;
+}
+
+h2, h3 {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.details-container .key {
+  color: #53575B;
+  opacity: 0.8;
+}

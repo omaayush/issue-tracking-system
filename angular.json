@@ -3,21 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tut": {
+    "issue-tracker": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
-        }
-      },
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/",
+            "outputPath": "dist/issue-tracker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/reboot.scss",
-              "src/styles/global.scss",
-              "src/styles/theme.scss"
+              "src/styles/global.css",
+              "src/styles/theme.css",
+              "src/styles/reboot.css"
             ],
             "scripts": []
           },
@@ -63,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "tut:build"
+            "browserTarget": "issue-tracker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "tut:build:production"
+              "browserTarget": "issue-tracker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tut:build"
+            "browserTarget": "issue-tracker:build"
           }
         },
         "test": {
@@ -85,9 +81,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles/reboot.scss",
-              "src/styles/global.scss",
-              "src/styles/theme.scss"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -110,7 +104,7 @@
         }
       }
     },
-    "tut-e2e": {
+    "issue-tracker-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -119,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "tut:serve"
+            "devServerTarget": "issue-tracker:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "tut:serve:production"
+              "devServerTarget": "issue-tracker:serve:production"
             }
           }
         },
@@ -139,5 +133,10 @@
       }
     }
   },
-  "defaultProject": "tut"
+  "defaultProject": "issue-tracker",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

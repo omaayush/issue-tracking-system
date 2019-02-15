@@ -1,35 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateComponent } from './create/create.component';
 import { IssueCardMiniComponent } from './issue-card-mini/issue-card-mini.component';
-import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
-import { IssuesListComponent } from './issues-list/issues-list.component';
+import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueDetailsComponent } from './issue-details/issue-details.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import { IssueCardMiniProgressComponent } from './issue-card-mini-progress/issue-card-mini-progress.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
-    DashboardComponent,
-    HeaderComponent,
-    IssueCardMiniComponent,
-    IssuesListComponent,
     KanbanBoardComponent,
+    HeaderComponent,
     NavComponent,
+    DashboardComponent,
+    CreateComponent,
+    IssueCardMiniComponent,
+    IssueListComponent,
     IssueDetailsComponent,
+    IssueCardMiniProgressComponent,
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

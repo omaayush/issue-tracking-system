@@ -1,37 +1,43 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Users } from '../../models/users';
-import {GetUserDataService} from '../services/get-user-data.service';
-import {observable} from 'rxjs';
-import Issues from '../../models/issue';
-import {GetIssueDataService} from '../services/get-issue-data.service';
+import { card } from '../../models/card';
+import Issue from 'src/models/Issue';
+import { UserService } from '../user.service';
+import Assignee from 'src/models/Assignee';
 
 @Component({
   selector: 'app-issue-card-mini',
   templateUrl: './issue-card-mini.component.html',
-  styleUrls: ['./issue-card-mini.component.scss'],
-  providers: [GetUserDataService]
+  styleUrls: ['./issue-card-mini.component.css']
 })
-export class IssueCardMiniComponent implements OnInit{
+export class IssueCardMiniComponent implements OnInit {
 
-  @Input() public issueData: Issues;
+  @Input() public issueData: Issue;
   @Input() public showAssignee: boolean;
-  @Input() public stat: string;
-  // public issues: Issues[];
-  //public users: Users[];
-  //issue: Users;
+  @Input() users: Assignee[] = [new Assignee(0, 'Not Assigned', 'drz@gmail.com', '../assets/Create_dark.svg', 'Not Assigned')];
+  userData: Assignee = new Assignee(0, 'Not Assigned', 'drz@gmail.com', '../assets/Create_dark.svg', 'Not Assigned');
+  priority: string[] = ['Low Priority', 'Medium Priority', 'High Priority'];
+  priorityStyles: string[] = ['low', 'medium', 'high'];
+  constructor(userService: UserService) {
+    // this.userService = userService;
+  }
+  ngOnInit() {
+    // this.getUsers();
+  }
 
-
-  // @Input() public statusM(): boolean;
-
-  // constructor(private getIssueDataService: GetIssueDataService){}
-  constructor(){}
-  // ngOnInit(): void {
-  //   this.users = this.getIssueDataService.getUsers();
+  // gets users from user service
+  // getUsers() {
+  //   this.userService.getUsers().subscribe((data) => {
+  //     this.users = data as Assignee[];
+  //   }, (error) => { console.log(error); });
   // }
 
-  ngOnInit(): void {
-    // this.getIssueDataService.getIssues()
-    // .subscribe(data => this.issues = data);
+  parse(users: Assignee[], value: string) {
+    if ( users && value) {
+      this.userData = users[parseInt(value, 10) - 1];
+    }
+    return this.userData;
   }
+
+
 
 }
