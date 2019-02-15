@@ -32,6 +32,10 @@ export class GraphComponent implements OnInit, OnDestroy, AfterContentInit {
         chart.paddingRight = 20;
         const data = [];
 
+        const daysInMonth = (month, year) => {
+          return new Date(year, month, 0).getDate();
+        };
+
         // used to count the number of days
         const countDays = () => {
           const today = new Date();
@@ -39,16 +43,12 @@ export class GraphComponent implements OnInit, OnDestroy, AfterContentInit {
           return daysInMonth(month + 1, today.getFullYear());
         };
 
-        const daysInMonth = (month, year) => {
-          return new Date(year, month, 0).getDate();
-        };
-
         // getting the today's date
         const currentDate = new Date();
         const currentMonth = currentDate.getMonth();
         const currentYear = currentDate.getFullYear();
 
-        // assigning number of days to a varibale
+        // assigning number of days to a variables
         const numberOfDays = countDays();
 
         // loop through each date in a month

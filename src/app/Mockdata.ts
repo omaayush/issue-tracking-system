@@ -11,7 +11,7 @@ export const assignee: Assignee[] = [
     role: '',
     email: '',
     profile_image: ''
-  }]
+  }];
 
 const MOCK_DATA = {
     ISSUE:  [
