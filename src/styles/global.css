@@ -11,13 +11,15 @@ html, body {
     height: 100%;
   }
   
-  .card {
-    cursor: pointer;
-    padding: 1em;
-  }
-  
-  input, select, textarea, .attachment {
-    border-radius: 2px;
+
+
+.button {
+  border-radius: .25em;
+  padding: .25em .75em;
+}
+
+input, select, textarea, .attachment {
+    /*border-radius: 2px;*/
     height: 2.5em;
     opacity: 0.4;
     padding:.325em 1.5em;
@@ -31,12 +33,7 @@ html, body {
     -webkit-appearance: none;
   }
   
-  button {
-    border: none;
-    border-radius: 4px;
-    padding: .5em 1em;
-  }
-  
+
   textarea::placeholder {
       font-style: italic;
   }
@@ -57,10 +54,6 @@ html, body {
     margin: 0;
   }
   
-  h1, h2, h3 {
-    margin: 0;
-  }
-  
   p{
     margin: 0;
   }
@@ -68,9 +61,6 @@ html, body {
   .avatar {
     border-radius: 50%;
   }
-
-
-/* You can add global styles to this file, and also import other style files */
 
 html body {
   min-height: 100%;
@@ -88,7 +78,7 @@ select {
   width: 100%;
   background-color: transparent;
   height: 3em;
-  border-radius: 0.5em;
+  /*border-radius: 0.5em;*/
 }
 
 .form-group {
@@ -100,9 +90,11 @@ select {
 }
 
 .card {
-  height: 14.813em;
-  width: 20.82em;
+  height: 13.813em;
   margin-bottom: 1em;
+  cursor: pointer;
+  padding: 1em;
+  /*width: 20em;*/
 }
 
 .card > .card-body {
@@ -135,12 +127,6 @@ select {
   padding: 1.5em;
 }
 
-
-
-.button {
-  border-radius: .25em;
-  padding: .25em .75em;
-}
 
   .white-theme {
     background-color: #fff;
@@ -281,9 +267,7 @@ select {
     padding: 1em 0;
   }
 
-  .card {
-    width: 23em;
-  }
+
 
 }
 

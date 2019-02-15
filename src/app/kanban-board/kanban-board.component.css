@@ -9,10 +9,27 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .buttons-header {
+    display: flex;
+    justify-items: auto;
+    justify-content: flex-end;
+
+  }
+
+.header-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.header-content select{
+  border: none;
+}
   
   .kanban-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
   }
-  

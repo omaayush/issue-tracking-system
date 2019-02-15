@@ -3,7 +3,7 @@
   <div class="card__date" *ngIf="showAssignee">{{ issueData.created_at | date }}</div>
   <h3>{{ issueData.title }}</h3>
   <p>
-    {{ issueData.description_part }}
+    {{ issueData.description_part | slice:1:100 }}....
   </p>
   <section class="assignee" *ngIf="showAssignee && users && issueData">
     <strong>Assignee</strong>

@@ -7,6 +7,7 @@ export default class Issue extends Model {
 
     id: number;
     description_part: string;
+    description:string;
     created_at: Date;
     updated_at: Date;
     title: string;

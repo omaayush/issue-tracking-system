@@ -45,11 +45,12 @@ export class CreateComponent implements OnInit {
     this.createForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
       description: ['', Validators.required],
-      status: ['', Validators.required],
+    //  status: ['', Validators.required],
       type: ['', Validators.required],
       project: ['', Validators.required],
       assignee: ['', Validators.required],
-      severity: ['', Validators.required]
+      severity: ['', Validators.required],
+      date: ['', Validators.required]
       // attachment: ['', Validators.required]
     });
 

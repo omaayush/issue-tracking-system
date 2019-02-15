@@ -1,27 +1,52 @@
 <div class="app-container">
   <app-nav></app-nav>
-  <main>
-    <h1>Dashboard</h1>
+    <main>
+      <section class="header">
+        <section>
+          <h1>Dashboard</h1>
+        </section>
+        <section class="buttons-header">
+          <section class="header-content">
+            <span>for: </span>
+            <select>
+              <option value="1">This Month</option>
+              <option value="2">Last Week</option>
+              <option value="3">Last Month</option>
+            </select>
+          </section>
+        </section>
+      </section>
     <section class="paper graph-section">
-      <img src="../assets/graph.png" />
+      <img src="../assets/graph.png"/>
     </section>
     <section class="issues-list-section">
       <article class="paper">
-        <app-issues-list heading="High Priority" showAssignee="false" [issues]="highPriorityIssues"></app-issues-list>
+        <app-issues-list [issues]="highPriorityIssues" heading="High Priority" showAssignee="false"></app-issues-list>
+        <div class="smallest-text view-link"><a routerLink="/kanban-board">View all ></a></div>
       </article>
+
       <article class="paper">
-        <app-issues-list heading="Recently Updated" showAssignee="false" [issues]="recentlyUpdatedIssues"></app-issues-list>
+        <app-issues-list [issues]="recentlyUpdatedIssues" heading="Recently Updated"
+                         showAssignee="false"></app-issues-list>
+        <div class="smallest-text view-link"><a routerLink="/kanban-board">View all ></a></div>
       </article>
+
       <article class="paper">
         <div>
-            <h2>All Issues</h2>
-            <hr />
-            <div *ngFor="let assigneeIssue of assigneeIssues">
-                <app-issue-card-mini-progress showAssignee="false" [issueData]="assigneeIssue"></app-issue-card-mini-progress>
-                <hr />
-            </div>
+          <h2>All Issues</h2>
+          <hr/>
+          <div *ngFor="let assigneeIssue of assigneeIssues">
+            <app-issue-card-mini-progress [issueData]="assigneeIssue"
+                                          showAssignee="false"></app-issue-card-mini-progress>
+            <hr/>
+          </div>
+          <div class="smallest-text view-link"><a routerLink="/kanban-board">View all ></a></div>
         </div>
       </article>
     </section>
   </main>
 </div>
+
+
+
+
