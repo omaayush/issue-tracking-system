@@ -1,23 +1,25 @@
 <div class="app-container">
   <app-nav></app-nav>
-    <main>
-      <section class="header">
-        <section>
-          <h1>Dashboard</h1>
-        </section>
-        <section class="buttons-header">
-          <section class="header-content">
-            <span>for: </span>
-            <select>
-              <option value="1">This Month</option>
-              <option value="2">Last Week</option>
-              <option value="3">Last Month</option>
-            </select>
-          </section>
+  <main>
+    <section class="header">
+      <section>
+        <h1>Dashboard</h1>
+      </section>
+      <section class="buttons-header">
+        <section class="header-content">
+          <span>for: </span>
+          <select>
+            <option value="1">This Month</option>
+            <option value="2">Last Week</option>
+            <option value="3">Last Month</option>
+          </select>
         </section>
       </section>
+    </section>
     <section class="paper graph-section">
-      <img src="../assets/graph.png"/>
+      <div *ngIf="allIssues" class="graph-container display-flex">
+        <app-graph [allIssues]="allIssues" style="width: 100%;"></app-graph>
+      </div>
     </section>
     <section class="issues-list-section">
       <article class="paper">
@@ -31,13 +33,27 @@
         <div class="smallest-text view-link"><a routerLink="/kanban-board">View all ></a></div>
       </article>
 
+      <!--<article class="paper">-->
+        <!--<div class="display-flex flex-flow-column-wrap card-container">-->
+          <!--<div class="card-list-item card-theme padding-1">-->
+            <!--<h2>All Assignees <i class="fa fa-caret-down"></i></h2>-->
+          <!--</div>-->
+          <!--<div class="card card-list-item card-theme padding-1" routerLink="/issues" *ngFor="let assignee of allAssignees| slice:0:4">-->
+            <!--<app-assignee-list [assignee] = "assignee"></app-assignee-list>-->
+          <!--</div>-->
+          <!--<div class="smallest-text view-link"><a routerLink="/kanban-board">View all ></a></div>-->
+        <!--</div>-->
+      <!--</article>-->
+
       <article class="paper">
         <div>
-          <h2>All Issues</h2>
+          <h2>All Assignee</h2>
           <hr/>
-          <div *ngFor="let assigneeIssue of assigneeIssues">
+          <div *ngFor="let assigneeIssue of assigneeIssues | slice:0:4">
             <app-issue-card-mini-progress [issueData]="assigneeIssue"
-                                          showAssignee="false"></app-issue-card-mini-progress>
+                                          showAssignee="false">
+
+            </app-issue-card-mini-progress>
             <hr/>
           </div>
           <div class="smallest-text view-link"><a routerLink="/kanban-board">View all ></a></div>

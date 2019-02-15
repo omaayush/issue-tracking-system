@@ -13,7 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IssueCardMiniProgressComponent } from './issue-card-mini-progress/issue-card-mini-progress.component';
-
+import { GraphComponent } from './graph/graph.component';
+import { ModalComponent } from './modal/modal.component';
+import { SelectDropdownComponent } from './select-dropdown/select-dropdown.component';
+import { AssigneeListComponent } from './assignee/assignee-list/assignee-list.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,10 @@ import { IssueCardMiniProgressComponent } from './issue-card-mini-progress/issue
     IssueListComponent,
     IssueDetailsComponent,
     IssueCardMiniProgressComponent,
+    GraphComponent,
+    ModalComponent,
+    SelectDropdownComponent,
+    AssigneeListComponent,
   ],
   imports: [
     BrowserModule,

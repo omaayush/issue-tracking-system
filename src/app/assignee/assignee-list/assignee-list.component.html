@@ -1,0 +1,15 @@
+<div class="card-list-item-body">
+  <div class="display-flex user-details">
+    <img src="assets/user_1.svg" alt="">
+    <div>
+      <h5 class="user-name">{{ assignee.username }}</h5>
+      <p class="smallest-text">{{ assignee.role }}</p>
+    </div>
+  </div>
+
+  <div class="progress-bar" [ngStyle]="gradient"></div>
+  <div class="display-flex space-between">
+    <span>High Priority Issues: {{ assignee.highPriorityIssuesCount }}</span>
+    <span>Total Issues: {{ assignee.totalIssuesCount }}</span>
+  </div>
+</div>

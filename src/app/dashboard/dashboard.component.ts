@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   userService: UserService;
   assignees: Assignee[];
   assigneeIssues = [];
+  allIssues: Issue[];
 
   constructor(issueService: IssueService, userService: UserService) {
     this.issueService = issueService;

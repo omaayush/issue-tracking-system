@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { IssueType } from '../../models/IssueType';
 import Issue from 'src/models/Issue';
 import { IssueService } from '../issue.service';
 import { UserService } from '../user.service';
@@ -103,11 +102,7 @@ export class CreateComponent implements OnInit {
       this.router.navigate(['/issues', data['id']]);
     }, (error) => {
       console.log(error);
-      window.alert('OOps falied  check console');
+      window.alert('check console');
     });
   }
-  // TODO: Create event and subscribe for assigning dveloper to an event of issue creation
-
-
-
 }
