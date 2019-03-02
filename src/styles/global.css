@@ -1,0 +1,278 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    min-height: 100vh;
+  }
+  
+  .app-container {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 15% auto;
+    height: 100%;
+  }
+  
+
+
+.button {
+  border-radius: .25em;
+  padding: .25em .75em;
+}
+
+input, select, textarea, .attachment {
+    /*border-radius: 2px;*/
+    height: 2.5em;
+    opacity: 0.4;
+    padding:.325em 1.5em;
+    width: 100%;
+  }
+  
+  select {
+    background: url(../assets/down-arrow.png) no-repeat right;
+    background-size: 20px 20px;
+    background-position-x: 96%;
+    -webkit-appearance: none;
+  }
+  
+
+  textarea::placeholder {
+      font-style: italic;
+  }
+  
+  .card__id {
+    font-size: .8em;
+  }
+  
+  .card__date {
+    font-size: .7em;
+  }
+  
+  h3 {
+    font-size: 1em;
+  }
+  
+  hr {
+    margin: 0;
+  }
+  
+  p{
+    margin: 0;
+  }
+  
+  .avatar {
+    border-radius: 50%;
+  }
+
+html body {
+  min-height: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+select {
+  border: .05em solid #d5d5d5;
+  padding: .5em;
+  width: 100%;
+  background-color: transparent;
+  height: 3em;
+  /*border-radius: 0.5em;*/
+}
+
+.form-group {
+  padding: 1em;
+}
+
+.main-container {
+  padding: 1.5em;
+}
+
+.card {
+  height: 13.813em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  padding: 1em;
+  /*width: 20em;*/
+}
+
+.card > .card-body {
+  padding: 2em;
+}
+
+.card .user-details {
+  justify-content: center;
+}
+
+.card .user-details img {
+  margin-right: 5px;
+}
+
+.card .user-name {
+  margin: 0;
+}
+
+.card .user-details p {
+  margin: 0;
+}
+
+.card.card-list-item {
+  height: 8.813em;
+  margin: 0;
+  border: .05em solid #f5f5f5;
+}
+
+.card-list-item > .card-list-item-body {
+  padding: 1.5em;
+}
+
+
+  .white-theme {
+    background-color: #fff;
+    box-shadow: 0 .125em .25em 0 #f5f5f5;
+  }
+
+.dark-theme {
+  background-color: #24203a;
+  color: #635d92;
+}
+
+.padding-1 {
+     padding: 1em;
+   }
+
+.padding-2 {
+  padding: 2em;
+}
+
+.padding-3 {
+  padding: 3em;
+}
+
+.padding-left-3 {
+  padding-left: 3em;
+}
+
+.no-border {
+  border: 0;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+   .display-flex {
+     display: flex;
+   }
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+.flex-grow-3 {
+  flex-grow: 3;
+}
+
+.flex-grow-4 {
+  flex-grow: 4;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-flow-column-wrap {
+  flex-flow: column wrap;
+}
+
+.flex-flow-row-wrap {
+  flex-flow: row wrap;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.stretch {
+  justify-content: stretch;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+   .display-grid {
+     display: grid;
+   }
+
+.grid-2v2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-2v3 {
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.grid-3v3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-row-gap-1 {
+  grid-row-gap: 1em;
+}
+
+.grid-column-gap-1 {
+  grid-column-gap: 1em;
+}
+
+.grid-column-gap-2 {
+  grid-column-gap: 2em;
+}
+
+.grid-column-1-2 {
+  grid-column: 1 / 3;
+}
+
+@media screen and (max-width: 425px) {
+  .display-sm-none {
+    display: none;
+  }
+
+  .main {
+    grid-column: 1 / -1;
+  }
+
+  .base-layout {
+    grid-template-columns: 1.5fr 0.5fr 1fr;
+  }
+
+  .filter-container {
+    padding: 1em 0;
+  }
+
+
+
+}
+
+@media screen and (max-width: 350px) {
+  .card {
+    width: 18em;
+  }
+}

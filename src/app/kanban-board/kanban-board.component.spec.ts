@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { KanbanBoardComponent } from './kanban-board.component';
 
 describe('KanbanBoardComponent', () => {

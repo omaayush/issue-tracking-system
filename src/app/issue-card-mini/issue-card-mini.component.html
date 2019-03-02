@@ -1,104 +1,20 @@
-<!--<section *ngFor="let issueData of users">-->
-<!--<div class="Users container" routerLink="/issues">-->
-    <!--<div class="card__id" *ngIf="showAssignee">Id: {{ issueData.id }}</div>-->
-    <!--<div class="card__date" *ngIf="showAssignee">{{ issueData.date }}</div>-->
-  <!--<h3>{{ issueData.heading }}</h3>-->
-  <!--<p>-->
-    <!--{{ issueData.description }}-->
-  <!--</p>-->
-  <!--<section class="assignee" *ngIf="showAssignee">-->
-    <!--<strong>Assignee</strong>-->
-    <!--<img src={{issueData.assignee.profile_pic_url}}/>-->
-    <!--<div class="details">  -->
-      <!--<div>{{ issueData.assignee.name }}</div>-->
-      <!--<div>{{ issueData.assignee.designation }}</div>-->
-    <!--</div>-->
-  <!--</section>-->
-<!--</div>-->
-<!--</section>-->
-
-<!--<section *ngFor="let issueData of users">-->
-  <!--&lt;!&ndash;<section *ngIf=({{issueData}}===stat)>&ndash;&gt;-->
-  <!--<div class="card container" routerLink="/issues">-->
-    <!--<div class="card__id" >Id: {{ issueData.id }}</div>-->
-    <!--<div class="card__date" >{{ issueData.date }}</div>-->
-    <!--<h3>{{ issueData.heading }}</h3>-->
-    <!--<p>-->
-      <!--{{ issueData.description }}-->
-    <!--</p>-->
-    <!--<section class="assignee" *ngIf="showAssignee">-->
-      <!--<strong>Assignee</strong>-->
-      <!--<img src={{issueData.assignee.profile_pic_url}}/>-->
-      <!--<div class="details">-->
-        <!--<div>{{ issueData.assignee.name }}</div>-->
-        <!--<div>{{ issueData.assignee.designation }}</div>-->
-      <!--</div>-->
-    <!--</section>-->
-  <!--</div>-->
-<!--</section>-->
-<!--</section>-->
-
-
-<!--<section *ngFor="let issueData of issues">-->
-  <!--<div class="card container" routerLink="/issues/{{issueData.id}}">-->
-    <!--<div class="card__id" >Id: {{ issueData.id }}</div>-->
-    <!--<div class="card__date" >{{ issueData.severity}}</div>-->
-    <!--<h3>{{ issueData.description_part }}</h3>-->
-    <!--<p>-->
-      <!--{{ issueData.status }}-->
-    <!--</p>-->
-  <!--</div>-->
-<!--</section>-->
-
-
 <div class="card container" [routerLink]="['/issues', issueData.id]">
   <div class="card__id" *ngIf="showAssignee">Id: {{ issueData.id }}</div>
-  <div class="card__date" *ngIf="showAssignee">{{ issueData.created_at }}</div>
+  <div class="card__date" *ngIf="showAssignee">{{ issueData.created_at | date }}</div>
   <h3>{{ issueData.title }}</h3>
   <p>
-    {{ issueData.description }}
+    {{ issueData.description_part | slice:1:100 }}....
   </p>
-  <section class="assignee" *ngIf="showAssignee">
+  <section class="assignee" *ngIf="showAssignee && users && issueData">
     <strong>Assignee</strong>
-    <img src="../../assets/user_2.svg">
+    <strong>Status</strong>
     <div class="details">
-      <div>{{ issueData.assignee }}</div>
-      <div>{{ issueData.due_date }}</div>
+      <img src="{{parse(users, issueData.assignee)['profile_image']}}">
+      <span class="details-info">
+        <span *ngIf="users && issueData"><strong>{{ parse(users, issueData.assignee)['username'] }}</strong></span>
+        <span *ngIf="users && issueData">{{ parse(users, issueData.assignee)['role'] }}</span>
+      </span>
     </div>
+    <button class="{{priorityStyles[issueData.severity-1] }}">{{ priority[issueData.severity-1] }}</button>
   </section>
 </div>
-
-
-
-
-<!--<div class="card card-theme" [routerLink]="['/issues', issueData.id]" >-->
-  <!--<div class="card-body">-->
-    <!--<div class="display-flex space-between align-items-start">-->
-      <!--<h5>ID: {{ issueData.id }}</h5>-->
-      <!--<span class="smallest-text">{{issueData.created_at}}</span>-->
-    <!--</div>-->
-    <!--<h4>{{issueData.title}}</h4>-->
-    <!--<p class="small-text">{{issueData.description_part}} </p>-->
-    <!--<div class="display-flex small-text space-between">-->
-      <!--<h5>Assignee</h5>-->
-      <!--<h5 class="align-self-end">Status</h5>-->
-    <!--</div>-->
-    <!--<div class="display-flex space-between align-items-start">-->
-      <!--<div class="display-flex user-details">-->
-        <!--<img src="assets/user_1.svg" alt="">-->
-        <!--<div>-->
-          <!--<h5 class="user-name">{{ issueData.assignee }}</h5>-->
-          <!--<p class="smallest-text">{{ issueData.type }}</p>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="button red smallest-text">{{ issueData.severity }}</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
-
-
-
-
-
-

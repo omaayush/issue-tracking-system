@@ -1,0 +1,47 @@
+main {
+    padding: 1em;
+  }
+  
+form {
+    display: grid;
+    grid-gap: 1.7em 7.5em;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em;
+  }
+
+form .invalid-feedback{
+    color: #ff6347 !important;
+  }
+
+
+.submit-section {
+  display: flex;
+  grid-column: 2 / -1;
+  justify-content: flex-end;
+}
+
+
+.submit-section .sub{
+  justify-content: space-between;
+}
+
+.submit-section button{
+  margin-left: 3em;
+}
+
+.invalid-feedback{
+  color:red;
+//border: 2px solid red;
+}
+
+.invalid-feedback input{
+  border: 2px solid darkred;
+}
+.invalid-feedback label{
+  color: darkred;
+}
+
+.attachment {
+  text-align: center;
+}
+

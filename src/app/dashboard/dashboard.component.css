@@ -1,0 +1,70 @@
+.app-container > main {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: 1em;
+    padding: .5em 2em;
+  }
+  
+  .issues-list-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+  }
+  
+  .graph-section > img {
+    width: 100%;
+  }
+
+
+  h2 {
+    padding: .7em 1em;
+    font : bold;
+  }
+
+.view-link {
+  background-color: #fff;
+  padding: 1em;
+  align-self: flex-end;
+  width: 100%;
+  text-align: right;
+}
+
+.view-link a {
+  color: blue;
+}
+
+.app-container > main {
+  display: grid;
+  grid-template-rows: 3em 1fr;
+  grid-gap: 1em;
+  padding: .5em 2em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-header {
+  display: flex;
+  justify-items: auto;
+  justify-content: flex-end;
+
+}
+
+.header-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.header-content select{
+  border: none;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+}

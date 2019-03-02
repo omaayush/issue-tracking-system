@@ -2,18 +2,38 @@
   <app-nav></app-nav>
   <main>
     <section class="header">
-      <h1>Issues</h1>
-      <h1>For January 2019</h1>
+      <section>
+        <h1>Issues</h1>
+      </section>
+      <section class="buttons-header">
+        <section class="header-content">
+          <section>Project: </section>
+          <select (change)="onProjectChange($event.target.value)">
+            <option *ngFor="let project of projects" [value]="project.id">{{ project.name }}</option>
+          </select>
+        </section>
+        <section class="buttons-header">
+          <section class="header-content">
+            <section>Assignee: </section>
+          <select (change)="onAssigneeChange($event.target.value)">
+            <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
+          </select>
+          </section>
+        </section>
+      </section>
     </section>
     <section class="kanban-board">
       <section class="paper">
-        <app-issues-list heading="Todo" showAssignee="true" [issues]="toDoIssue" stat="Todo"></app-issues-list>
+        <app-issues-list [issues]="toDoIssue" [users]="users" heading="Todo"
+                         showAssignee="showAssignee"></app-issues-list>
       </section>
       <section class="paper">
-        <app-issues-list heading="In Progress" showAssignee="true" [issues]="inProgressIssue" stat="InProgress"></app-issues-list>
+        <app-issues-list [issues]="inProgressIssue" [users]="users" heading="In Progress"
+                         showAssignee="showAssignee"></app-issues-list>
       </section>
       <section class="paper">
-        <app-issues-list heading="Done"  showAssignee="true" [issues]="doneIssues" stat="Done"></app-issues-list>
+        <app-issues-list [issues]="doneIssues" [users]="users" heading="Done"
+                         showAssignee="showAssignee"></app-issues-list>
       </section>
     </section>
   </main>
