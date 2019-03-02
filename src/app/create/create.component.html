@@ -23,9 +23,12 @@
 
       <section class="title-container">
         <label for="title"> Title:</label>
-        <input type="text" class="title-text" name="title" placeholder="Text" formControlName="title">
-        <div *ngIf="(f.title.dirty || f.title.touched) && f.title.errors" class="invalid-feedback">
-          <div *ngIf="f.title.errors.required">Title is required len 1-100</div>
+        <input type="text" class="title-text" name="title"
+               placeholder="Text" formControlName="title">
+        <div *ngIf="(f.title.dirty || f.title.touched)
+        && f.title.errors" class="invalid-feedback">
+          <div *ngIf="f.title.errors.required">
+            Title is required len 1-100</div>
         </div>
       </section>
 

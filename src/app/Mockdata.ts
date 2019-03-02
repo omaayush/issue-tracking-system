@@ -2,6 +2,16 @@ import Issue from 'src/models/Issue';
 import { IssueType } from 'src/models/IssueType';
 import { Priority } from 'src/models/Priority';
 import { IssueStatus, IssueSeverity } from 'src/models/IssueStatus';
+import {Assignee} from './assignee/Assignee.model';
+
+export const assignee: Assignee[] = [
+  {
+    id: -1,
+    username: '',
+    role: '',
+    email: '',
+    profile_image: ''
+  }];
 
 const MOCK_DATA = {
     ISSUE:  [

@@ -38,8 +38,8 @@ export class IssueDetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params['id'];
       this.getIssue();
-      console.log( this.issues);
-      console.log(this.issue['project'] + 'issue');
+      // console.log( this.issues);
+      // console.log(this.issue['project'] + 'issue');
       // if (this.issue['assignee']) { this.getUser(); }
       // if (this.issue['project']) { this.getProject(); }
    });
@@ -54,7 +54,7 @@ export class IssueDetailsComponent implements OnInit {
       this.issue = data as Issue;
       this.getUser();
       this.getProject();
-      console.log('got ' + this.issue);
+      // console.log('got ' + this.issue);
     }, (error) => { console.log(error); });
   }
 
@@ -86,6 +86,10 @@ export class IssueDetailsComponent implements OnInit {
         this.router.navigateByUrl('/issues');
       }, (error) => { console.log(error); this.router.navigateByUrl('/issues'); });
      }
+  }
+
+  editIssue() {
+
   }
 
 }

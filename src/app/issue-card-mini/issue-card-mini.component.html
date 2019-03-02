@@ -1,13 +1,14 @@
 <div class="card container" [routerLink]="['/issues', issueData.id]">
-  <div class="card__id" *ngIf="showAssignee">Id: {{ issueData.id }}</div>
-  <div class="card__date" *ngIf="showAssignee">{{ issueData.created_at | date }}</div>
+  <div class="card__id" *ngIf="showAssignee"><h5>Id: {{ issueData.id }}</h5></div>
+  <div class="card__date smallest-text" *ngIf="showAssignee">{{ issueData.updated_at | date:'MMMM dd, yyyy' }}</div>
   <h3>{{ issueData.title }}</h3>
-  <p>
+  <p class="small-text">
     {{ issueData.description_part | slice:1:100 }}....
   </p>
-  <section class="assignee" *ngIf="showAssignee && users && issueData">
-    <strong>Assignee</strong>
-    <strong>Status</strong>
+  <section class="assignee display-flex small-text space-between"
+           *ngIf="showAssignee && users && issueData">
+    <strong><h5>Assignee</h5></strong>
+    <strong ><h5 class="display-flex align-self-end">Status</h5></strong>
     <div class="details">
       <img src="{{parse(users, issueData.assignee)['profile_image']}}">
       <span class="details-info">
@@ -15,6 +16,8 @@
         <span *ngIf="users && issueData">{{ parse(users, issueData.assignee)['role'] }}</span>
       </span>
     </div>
+    <div class="button-in-card small-text">
     <button class="{{priorityStyles[issueData.severity-1] }}">{{ priority[issueData.severity-1] }}</button>
+    </div>
   </section>
 </div>

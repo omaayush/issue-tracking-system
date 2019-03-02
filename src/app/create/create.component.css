@@ -9,9 +9,7 @@ form {
     padding: 1em;
   }
 
-form .invalid-feedback{
-    color: #ff6347 !important;
-  }
+
 
 
 .submit-section {
@@ -32,6 +30,9 @@ form .invalid-feedback{
 .invalid-feedback{
   color:red;
 //border: 2px solid red;
+}
+form .invalid-feedback{
+  color: #ff6347 !important;
 }
 
 .invalid-feedback input{
