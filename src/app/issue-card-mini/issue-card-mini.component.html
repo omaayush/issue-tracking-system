@@ -1,0 +1,51 @@
+<!--<section *ngFor="let issueData of IssueData">-->
+<!--<div class="Users container" routerLink="/issues">-->
+    <!--<div class="card__id" *ngIf="showAssignee">Id: {{ issueData.id }}</div>-->
+    <!--<div class="card__date" *ngIf="showAssignee">{{ issueData.date }}</div>-->
+  <!--<h3>{{ issueData.heading }}</h3>-->
+  <!--<p>-->
+    <!--{{ issueData.description }}-->
+  <!--</p>-->
+  <!--<section class="assignee" *ngIf="showAssignee">-->
+    <!--<strong>Assignee</strong>-->
+    <!--<img src={{issueData.assignee.profile_pic_url}}/>-->
+    <!--<div class="details">  -->
+      <!--<div>{{ issueData.assignee.name }}</div>-->
+      <!--<div>{{ issueData.assignee.designation }}</div>-->
+    <!--</div>-->
+  <!--</section>-->
+<!--</div>-->
+<!--</section>-->
+
+<!--<section *ngFor="let issueData of IssueData">-->
+  <!--&lt;!&ndash;<section *ngIf=({{issueData}}===stat)>&ndash;&gt;-->
+  <!--<div class="card container" routerLink="/issues">-->
+    <!--<div class="card__id" >Id: {{ issueData.id }}</div>-->
+    <!--<div class="card__date" >{{ issueData.date }}</div>-->
+    <!--<h3>{{ issueData.heading }}</h3>-->
+    <!--<p>-->
+      <!--{{ issueData.description }}-->
+    <!--</p>-->
+    <!--<section class="assignee" *ngIf="showAssignee">-->
+      <!--<strong>Assignee</strong>-->
+      <!--<img src={{issueData.assignee.profile_pic_url}}/>-->
+      <!--<div class="details">-->
+        <!--<div>{{ issueData.assignee.name }}</div>-->
+        <!--<div>{{ issueData.assignee.designation }}</div>-->
+      <!--</div>-->
+    <!--</section>-->
+  <!--</div>-->
+<!--</section>-->
+<!--</section>-->
+
+
+<section *ngFor="let issueData of IssueData">
+  <div class="card container" routerLink="/issues">
+    <div class="card__id" >Id: {{ issueData.id }}</div>
+    <div class="card__date" >{{ issueData.username}}</div>
+    <h3>{{ issueData.email }}</h3>
+    <p>
+      {{ issueData.role }}
+    </p>
+  </div>
+</section>
