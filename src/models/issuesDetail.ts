@@ -2,11 +2,10 @@ import { IssueType } from './issueType';
 import { Priority } from './priority';
 import Model from './model';
 
-export default class Issues extends Model {
+export default class Issue_Details extends Model {
 
   id: number;
-  description:string;
-  description_part: string;
+  description: string;
   created_at: Date;
   updated_at: Date;
   title: string;
@@ -17,7 +16,7 @@ export default class Issues extends Model {
   project: number;
   assignee: number;
 
-  public constructor(init?: Partial<Issues >) {
+  public constructor(init?: Partial<Issue_Details >) {
     super();
     Object.assign(this, init);
   }

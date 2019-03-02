@@ -10,7 +10,8 @@ import { IssueCardMiniComponent } from './issue-card-mini/issue-card-mini.compon
 import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 import { IssuesListComponent } from './issues-list/issues-list.component';
 import { IssueDetailsComponent } from './issue-details/issue-details.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

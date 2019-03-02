@@ -1,5 +1,8 @@
-export enum Priority {
-  HIGH_PRIORITY = 'High Priority',
-  MEDIUM_PRIORITY = 'Medium Priority',
-  LOW_PRIORITY = 'Low Priority'
+enum Priority {
+  SHOW_STOPPER,
+  HIGH,
+  LOW,
+  VERY_LOW
 }
+
+export { Priority };

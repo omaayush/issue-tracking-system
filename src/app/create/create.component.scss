@@ -9,21 +9,39 @@ form {
   padding: 1em;
 }
 
-
-.title-container {
-  grid-column: 1 / -1;
-}
-
 .submit-section {
   display: flex;
   grid-column: 2 / -1;
   justify-content: flex-end;
+  justify-items: center;
+}
+
+.submit-section .sub{
+  justify-content: space-between;
+}
+
+.submit-section button{
+  margin-left: 3em;
 }
 
 .title-text {
   height: 4.5em;
   padding: .625em 1.5em;
 }
+
+.invalid-feedback{
+  color:red;
+  //border: 2px solid red;
+}
+
+.invalid-feedback input{
+  border: 2px solid darkred;
+}
+.invalid-feedback label{
+  color: darkred;
+}
+
+
 
 .attachment {
   text-align: center;
